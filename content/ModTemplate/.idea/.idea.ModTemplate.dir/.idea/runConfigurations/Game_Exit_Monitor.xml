@@ -1,6 +1,6 @@
 <component name="ProjectRunConfigurationManager">
   <configuration default="false" name="Game Exit Monitor" type="RunExe" factoryName=".NET Executable">
-    <option name="EXE_PATH" value="powershell.exe" />
+    <option name="EXE_PATH" value="C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe" />
     <option name="PROGRAM_PARAMETERS" value="-ExecutionPolicy Bypass -File .\remove-from-mods.ps1" />
     <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
     <option name="PASS_PARENT_ENVS" value="1" />
