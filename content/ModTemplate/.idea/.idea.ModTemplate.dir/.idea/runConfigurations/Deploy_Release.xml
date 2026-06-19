@@ -1,7 +1,7 @@
 <component name="ProjectRunConfigurationManager">
   <configuration default="false" name="Deploy Release" type="RunExe" factoryName=".NET Executable">
-    <option name="EXE_PATH" value="dotnet.exe" />
-    <option name="PROGRAM_PARAMETERS" value="build &quot;$PROJECT_DIR$/ModTemplate.csproj&quot; -c Release" />
+    <option name="EXE_PATH" value="C:\Windows\System32\cmd.exe" />
+    <option name="PROGRAM_PARAMETERS" value="/c dotnet build &quot;$PROJECT_DIR$/ModTemplate.csproj&quot; -c Release" />
     <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
     <option name="PASS_PARENT_ENVS" value="1" />
     <option name="ENV_FILE_PATHS" value="" />
