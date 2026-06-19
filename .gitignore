@@ -1,5 +1,5 @@
 dotnet pack in this folder
-.idea/
+/.idea/
 .vs/
 bin/
 obj/
