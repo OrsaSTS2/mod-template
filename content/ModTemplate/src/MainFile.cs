@@ -4,7 +4,6 @@ using MegaCrit.Sts2.Core.Modding;
 
 namespace ModTemplate;
 
-//You're recommended but not required to keep all your code in this package and all your assets in the ModTemplate folder.
 [ModInitializer(nameof(Initialize))]
 public partial class MainFile : Node
 {
