@@ -6,6 +6,7 @@
     <Import Project="Sdk.props" Sdk="Godot.NET.Sdk" Version="4.5.1" />
     <Import Project=".\Sts2PathDiscovery.props"/>
     <PropertyGroup>
+        <ModBuildDir>$(MSBuildProjectDirectory)\.build\$(Configuration.ToLowerInvariant())\</ModBuildDir>
         <TargetFramework>net9.0</TargetFramework>
         <ImplicitUsings>true</ImplicitUsings>
         <Nullable>{NullableChecks}</Nullable> <!--Makes code analysis regarding null values stricter.-->
@@ -69,16 +70,16 @@
                 Condition="'$(Sts2DataDir)' == '' or !Exists('$(Sts2DataDir)')" />
     </Target>
     
-    <Target Name="CopyToModsFolderOnBuild" AfterTargets="PostBuildEvent">
-        <Message Text="Copying .dll and .json to mods folder." Importance="high" />
-        <Copy SourceFiles="$(TargetPath)" DestinationFolder="$(ModsPath)$(MSBuildProjectName)/" />
-        <Copy SourceFiles="$(AssemblyName).json" DestinationFolder="$(ModsPath)$(MSBuildProjectName)/" />
+    <Target Name="CopyToBuildFolderOnBuild" AfterTargets="PostBuildEvent">
+        <Message Text="Copying .dll and .json to .build folder." Importance="high" />
+        <Copy SourceFiles="$(TargetPath)" DestinationFolder="$(ModBuildDir)" />
+        <Copy SourceFiles="$(AssemblyName).json" DestinationFolder="$(ModBuildDir)" />
     </Target>
 
     <Target Name="CopyQuickPck" AfterTargets="PackPck" Condition="Exists('$(PckPackerOutputPath)') And '$(PckPackerSkipped)' != 'true'">
-        <Message Text="Copying quick .pck to mods folder." Importance="high"/>
+        <Message Text="Copying quick .pck to .build folder." Importance="high"/>
         <Copy SourceFiles="$(PckPackerOutputPath)"
-              DestinationFolder="$(ModsPath)/$(MSBuildProjectName)" />
+              DestinationFolder="$(ModBuildDir)" />
     </Target>
 
     <Target Name="NeedGodotForPublish" BeforeTargets="Publish">
@@ -87,8 +88,8 @@
     </Target>
 
     <Target Name="GodotPublish" AfterTargets="Publish" Condition="'$(GodotPath)' != '' and Exists('$(GodotPath)') and '$(IsInnerGodotExport)' != 'true'">
-        <Message Text="Exporting Godot .pck to mods folder" Importance="high"/>
-        <Exec Command="&quot;$(GodotPath)&quot; --headless --path &quot;$(MSBuildProjectDirectory)/.godot-project&quot; --export-pack &quot;BasicExport&quot; &quot;$(ModsPath)$(MSBuildProjectName)/$(MSBuildProjectName).pck&quot;"
+        <Message Text="Exporting Godot .pck to .build folder" Importance="high"/>
+        <Exec Command="&quot;$(GodotPath)&quot; --headless --path &quot;$(MSBuildProjectDirectory)/.godot-project&quot; --export-pack &quot;BasicExport&quot; &quot;$(ModBuildDir)$(MSBuildProjectName).pck&quot;"
               EnvironmentVariables="IsInnerGodotExport=true;MSBUILDDISABLENODEREUSE=1"
               ContinueOnError="WarnAndContinue"/>
     </Target>

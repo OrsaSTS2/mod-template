@@ -1,6 +1,0 @@
-<component name="ProjectRunConfigurationManager">
-  <configuration default="false" name="Debug STS2 Mod" type="CompoundRunConfigurationType">
-    <toRun name="Launch STS2" type="RunExe" />
-    <toRun name="Game Exit Monitor" type="RunExe" />
-  </configuration>
-</component>
