@@ -11,7 +11,7 @@
     <option name="RUNTIME_ARGUMENTS" value="" />
     <option name="AUTO_ATTACH_CHILDREN" value="0" />
     <method v="2">
-      <option name="Build Solution" enabled="true" />
+      <option name="RunConfigurationTask" enabled="true" run_configuration_name="Build All (Debug)" run_configuration_type="RunExe" />
     </method>
   </configuration>
 </component>

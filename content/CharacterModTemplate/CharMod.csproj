@@ -1,4 +1,9 @@
-﻿<Project Sdk="Godot.NET.Sdk/4.5.1" InitialTargets="CheckDependencyPaths">
+﻿<Project InitialTargets="CheckDependencyPaths">
+    <PropertyGroup>
+        <GodotProjectDir>$(MSBuildProjectDirectory)\.godot-project\</GodotProjectDir>
+    </PropertyGroup>
+
+    <Import Project="Sdk.props" Sdk="Godot.NET.Sdk" Version="4.5.1" />
     <Import Project=".\Sts2PathDiscovery.props"/>
     <PropertyGroup>
         <TargetFramework>net9.0</TargetFramework>
@@ -87,4 +92,6 @@
               EnvironmentVariables="IsInnerGodotExport=true;MSBUILDDISABLENODEREUSE=1"
               ContinueOnError="WarnAndContinue"/>
     </Target>
+
+    <Import Project="Sdk.targets" Sdk="Godot.NET.Sdk" Version="4.5.1" />
 </Project>
