@@ -1,13 +1,13 @@
 ﻿using BaseLib.Abstracts;
 using BaseLib.Utils.NodeFactories;
-using CharMod.CharModCode.Extensions;
+using CharMod.Extensions;
 using Godot;
 using MegaCrit.Sts2.Core.Entities.Characters;
 using MegaCrit.Sts2.Core.Models;
 using MegaCrit.Sts2.Core.Models.Cards;
 using MegaCrit.Sts2.Core.Models.Relics;
 
-namespace CharMod.CharModCode.Character;
+namespace CharMod.Character;
 
 public class CharMod : PlaceholderCharacterModel
 {

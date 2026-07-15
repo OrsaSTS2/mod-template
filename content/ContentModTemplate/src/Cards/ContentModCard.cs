@@ -1,9 +1,9 @@
 ﻿using BaseLib.Abstracts;
 using BaseLib.Extensions;
-using ContentMod.ContentModCode.Extensions;
+using ContentMod.Extensions;
 using MegaCrit.Sts2.Core.Entities.Cards;
 
-namespace ContentMod.ContentModCode.Cards;
+namespace ContentMod.Cards;
 
 /// <summary>
 /// This is the base class for your mod's cards, which is set up to load the card's images from your mod's resources.

@@ -1,8 +1,8 @@
 ﻿using BaseLib.Abstracts;
 using BaseLib.Extensions;
-using ContentMod.ContentModCode.Extensions;
+using ContentMod.Extensions;
 
-namespace ContentMod.ContentModCode.Relics;
+namespace ContentMod.Relics;
 
 /// <summary>
 /// This is the base class for your mod's relics, which is set up to load the relic's images from your mod's resources.

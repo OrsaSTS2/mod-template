@@ -1,8 +1,8 @@
 ﻿using BaseLib.Abstracts;
 using BaseLib.Utils;
-using CharMod.CharModCode.Character;
+using CharMod.Character;
 
-namespace CharMod.CharModCode.Potions;
+namespace CharMod.Potions;
 
 [Pool(typeof(CharModPotionPool))]
 public abstract class CharModPotion : CustomPotionModel;

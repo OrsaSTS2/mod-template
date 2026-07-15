@@ -1,10 +1,10 @@
 ﻿using BaseLib.Abstracts;
 using BaseLib.Extensions;
 using BaseLib.Utils;
-using CharMod.CharModCode.Character;
-using CharMod.CharModCode.Extensions;
+using CharMod.Character;
+using CharMod.Extensions;
 
-namespace CharMod.CharModCode.Relics;
+namespace CharMod.Relics;
 
 /// <summary>
 /// This is the base class for your mod's relics, which is set up to load the relic's images from your mod's resources.

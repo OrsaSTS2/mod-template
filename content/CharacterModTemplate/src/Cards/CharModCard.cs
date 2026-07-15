@@ -1,11 +1,11 @@
 ﻿using BaseLib.Abstracts;
 using BaseLib.Extensions;
 using BaseLib.Utils;
-using CharMod.CharModCode.Character;
-using CharMod.CharModCode.Extensions;
+using CharMod.Character;
+using CharMod.Extensions;
 using MegaCrit.Sts2.Core.Entities.Cards;
 
-namespace CharMod.CharModCode.Cards;
+namespace CharMod.Cards;
 
 /// <summary>
 /// This is the base class for your mod's cards, which is set up to load the card's images from your mod's resources.

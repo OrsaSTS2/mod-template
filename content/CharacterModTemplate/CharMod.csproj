@@ -58,12 +58,6 @@
         <None Include=".godot-project/**" Exclude=".godot-project/.godot/**"/>
     </ItemGroup>
 
-    <ItemGroup>
-      <Folder Include="CharMod\images\card_portraits\big\" />
-      <Folder Include="CharMod\images\powers\big\" />
-      <Folder Include="CharMod\images\relics\big\" />
-    </ItemGroup>
-    
     <Target Name="CheckDependencyPaths" >
         <Error
                 Text=" Slay the Spire 2 data not found at path '$(Sts2DataDir)'"

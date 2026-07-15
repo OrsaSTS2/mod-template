@@ -1,8 +1,8 @@
 ﻿using BaseLib.Abstracts;
-using CharMod.CharModCode.Extensions;
+using CharMod.Extensions;
 using Godot;
 
-namespace CharMod.CharModCode.Character;
+namespace CharMod.Character;
 
 public class CharModCardPool : CustomCardPoolModel
 {

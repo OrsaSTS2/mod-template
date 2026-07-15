@@ -1,9 +1,9 @@
 ﻿using BaseLib.Abstracts;
 using BaseLib.Extensions;
-using CharMod.CharModCode.Extensions;
+using CharMod.Extensions;
 using MegaCrit.Sts2.Core.Entities.Powers;
 
-namespace CharMod.CharModCode.Powers;
+namespace CharMod.Powers;
 
 /// <summary>
 /// This is the base class for your mod's powers, which is set up to load the power's images from your mod's resources.
