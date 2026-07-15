@@ -1,5 +1,5 @@
 <component name="ProjectRunConfigurationManager">
-  <configuration default="false" name="Build All (Debug)" type="RunExe" factoryName=".NET Executable">
+  <configuration default="false" name="Build All (Debug)" type="RunExe" factoryName=".NET Executable" folderName="STS2">
     <option name="EXE_PATH" value="C:\Windows\System32\cmd.exe" />
     <option name="PROGRAM_PARAMETERS" value="/c dotnet publish &quot;$PROJECT_DIR$/CharMod.csproj&quot; -c Debug" />
     <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
