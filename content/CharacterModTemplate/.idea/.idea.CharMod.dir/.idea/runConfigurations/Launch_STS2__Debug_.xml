@@ -1,7 +1,7 @@
 <component name="ProjectRunConfigurationManager">
   <configuration default="false" name="Launch STS2 (Debug)" type="RunExe" factoryName=".NET Executable">
     <option name="EXE_PATH" value="C:\Windows\System32\cmd.exe" />
-    <option name="PROGRAM_PARAMETERS" value="/c xcopy /Y /I /Q &quot;$PROJECT_DIR$\.build\debug\*&quot; &quot;{Sts2DirPath}\mods\CharMod\&quot; &amp;&amp; start &quot;&quot; powershell -ExecutionPolicy Bypass -File &quot;$PROJECT_DIR$\remove-from-mods.ps1&quot; &amp;&amp; &quot;{Sts2ExePath}&quot;" />
+    <option name="PROGRAM_PARAMETERS" value="/c xcopy /Y /I /Q &quot;$PROJECT_DIR$\.build\debug\*&quot; &quot;{Sts2DirPath}\mods\CharMod\&quot; &amp;&amp; &quot;{Sts2ExePath}&quot; &amp; rmdir /S /Q &quot;{Sts2DirPath}\mods\CharMod&quot;" />
     <option name="WORKING_DIRECTORY" value="{Sts2DirPath}" />
     <option name="PASS_PARENT_ENVS" value="1" />
     <option name="ENV_FILE_PATHS" value="" />
