@@ -16,7 +16,7 @@
                     "condition": true,
                     "exclude":[
                         ".git/**",
-                        ".godot/**",
+                        ".godot-project/.godot/**",
                         ".idea/**",
                         "Properties/**",
                         "README.md"
