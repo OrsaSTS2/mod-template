@@ -48,6 +48,7 @@
 
     <ItemGroup>
         <Compile Remove=".godot-project/**" />
+        <Compile Include=".godot-project/ContentMod/src/**/*.cs" />
         <EmbeddedResource Remove=".godot-project/**" />
     </ItemGroup>
 
