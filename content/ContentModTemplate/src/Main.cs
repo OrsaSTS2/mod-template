@@ -2,12 +2,13 @@ using Godot;
 using HarmonyLib;
 using MegaCrit.Sts2.Core.Modding;
 
-namespace ModTemplate;
+namespace ContentMod;
 
 [ModInitializer(nameof(Initialize))]
-public partial class MainFile : Node
+public partial class Main : Node
 {
-    public const string ModId = "ModTemplate"; //At the moment, this is used only for the Logger and harmony names.
+    public const string ModId = "ContentMod"; //Used for resource filepath
+    public const string ResPath = $"res://{ModId}";
 
     public static MegaCrit.Sts2.Core.Logging.Logger Logger { get; } = new(ModId, MegaCrit.Sts2.Core.Logging.LogType.Generic);
 
@@ -15,7 +16,7 @@ public partial class MainFile : Node
     {
         //If you want to use scripts defined in your mod for Godot scenes, uncomment the following line.
         //Godot.Bridge.ScriptManagerBridge.LookupScriptsInAssembly(Assembly.GetExecutingAssembly());
-     
+
 #if DEBUG
         System.Diagnostics.Debugger.Launch();
 #endif
