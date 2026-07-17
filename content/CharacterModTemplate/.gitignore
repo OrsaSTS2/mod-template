@@ -1,6 +1,7 @@
 .build/
 .godot/
 bin/
+!.godot-project/addons/**/bin/
 lib/
 /android/
 .git/
