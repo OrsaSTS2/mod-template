@@ -1,11 +1,14 @@
+# Build output
 .build/
-.godot/
-bin/
-!.godot-project/addons/**/bin/
-lib/
-/android/
-.git/
-# Rider - ignore user state, keep run configurations
+lib/**
+!lib/.gitkeep
+publish/
+packages/
+Properties/
+
+*.TMP
+
+# Rider
 .idea/**/.idea/workspace.xml
 .idea/**/.idea/misc.xml
 .idea/**/.idea/modules.xml
@@ -13,9 +16,7 @@ lib/
 .idea/**/.idea/shelf/
 .idea/**/.idea/.name
 .vs/
-publish/
-Properties/
-packages/
-.editorconfig
 *.user
-Directory.Build.props
+
+# Local-only build config
+.editorconfig
