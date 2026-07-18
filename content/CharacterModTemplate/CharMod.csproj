@@ -87,13 +87,13 @@
     </Target>
     
     <Target Name="NeedGodotForPublish" BeforeTargets="Publish">
-        <Error Text=" Godot path must be set up before publishing; Godot not found at path '$(GodotPath)'. Run the framework's _setup.bat to set the MEGADOT environment variable, or set GodotPath in Directory.Build.props."
-               Condition="'$(GodotPath)' == '' or !Exists('$(GodotPath)')"/>
+        <Error Text=" Godot path must be set up before publishing; Godot not found at path '$(MEGADOT)'. Run the framework's _setup.bat to set the MEGADOT environment variable, or set MEGADOT in Directory.Build.props."
+               Condition="'$(MEGADOT)' == '' or !Exists('$(MEGADOT)')"/>
     </Target>
     
-    <Target Name="GodotPublish" AfterTargets="Publish" Condition="'$(GodotPath)' != '' and Exists('$(GodotPath)') and '$(IsInnerGodotExport)' != 'true'">
+    <Target Name="GodotPublish" AfterTargets="Publish" Condition="'$(MEGADOT)' != '' and Exists('$(MEGADOT)') and '$(IsInnerGodotExport)' != 'true'">
         <Message Text="Exporting Godot .pck to .build folder" Importance="high"/>
-        <Exec Command="&quot;$(GodotPath)&quot; --headless --path &quot;$(MSBuildProjectDirectory)/.godot-project&quot; --export-pack &quot;BasicExport&quot; &quot;$(ModBuildDir)$(MSBuildProjectName).pck&quot;"
+        <Exec Command="&quot;$(MEGADOT)&quot; --headless --path &quot;$(MSBuildProjectDirectory)/.godot-project&quot; --export-pack &quot;BasicExport&quot; &quot;$(ModBuildDir)$(MSBuildProjectName).pck&quot;"
               EnvironmentVariables="IsInnerGodotExport=true;MSBUILDDISABLENODEREUSE=1"
               ContinueOnError="WarnAndContinue"/>
     </Target>
