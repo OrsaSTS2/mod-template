@@ -73,6 +73,15 @@ public static class StringExtensions
         return Path.Join(MainFile.ResPath, "images", "potions", "potion.png");
     }
 
+    public static string PotionOutlineImagePath(this string path)
+    {
+        path = Path.Join(MainFile.ResPath, "images", "potions", path);
+        if (ResourceLoader.Exists(path)) return path;
+
+        MainFile.Logger.Info("Could not find potion image path: " + path);
+        return Path.Join(MainFile.ResPath, "images", "potions", "outline", "potion.png");
+    }
+
     public static string CharacterUiPath(this string path)
     {
         return Path.Join(MainFile.ResPath, "images", "charui", path);
