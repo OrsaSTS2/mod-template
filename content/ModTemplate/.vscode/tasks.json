@@ -1,0 +1,63 @@
+{
+    "version": "2.0.0",
+    "options": {
+        "shell": {
+            "executable": "cmd.exe",
+            "args": ["/d", "/c"]
+        }
+    },
+    "tasks": [
+        {
+            "label": "Build All (Debug)",
+            "type": "shell",
+            "command": "dotnet publish \"${workspaceFolder}\\ModTemplate.csproj\" -c Debug",
+            "options": {
+                "cwd": "${workspaceFolder}"
+            },
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "problemMatcher": "$msCompile"
+        },
+        {
+            "label": "Build All (Release)",
+            "type": "shell",
+            "command": "dotnet publish \"${workspaceFolder}\\ModTemplate.csproj\" -c Release",
+            "options": {
+                "cwd": "${workspaceFolder}"
+            },
+            "group": "build",
+            "problemMatcher": "$msCompile"
+        },
+        {
+            "label": "Deploy Mod (Debug)",
+            "type": "shell",
+            "command": "xcopy /Y /I /Q /E \"${workspaceFolder}\\.build\\debug\\*\" \"{Sts2DirPath}\\mods\\ModTemplate\\\"",
+            "options": {
+                "cwd": "${workspaceFolder}"
+            },
+            "dependsOn": "Build All (Debug)",
+            "dependsOrder": "sequence",
+            "problemMatcher": []
+        },
+        {
+            "label": "Remove Deployed Mod",
+            "type": "shell",
+            "command": "if exist \"{Sts2DirPath}\\mods\\ModTemplate\" rmdir /S /Q \"{Sts2DirPath}\\mods\\ModTemplate\"",
+            "options": {
+                "cwd": "${workspaceFolder}"
+            },
+            "problemMatcher": []
+        },
+        {
+            "label": "Open Godot Project",
+            "type": "shell",
+            "command": "start \"\" \"%MEGADOT%\" --path \"${workspaceFolder}\\.godot-project\" --editor",
+            "options": {
+                "cwd": "${workspaceFolder}"
+            },
+            "problemMatcher": []
+        }
+    ]
+}

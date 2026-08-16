@@ -1,0 +1,27 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Launch STS2 (Debug)",
+            "type": "coreclr",
+            "request": "launch",
+            "preLaunchTask": "Deploy Mod (Debug)",
+            "postDebugTask": "Remove Deployed Mod",
+            "program": "{Sts2ExePath}",
+            "args": [],
+            "cwd": "{Sts2DirPath}",
+            "console": "internalConsole",
+            "stopAtEntry": false,
+            "justMyCode": false,
+            "requireExactSource": false
+        },
+        {
+            "name": "Attach to STS2",
+            "type": "coreclr",
+            "request": "attach",
+            "processName": "SlayTheSpire2.exe",
+            "justMyCode": false,
+            "requireExactSource": false
+        }
+    ]
+}
