@@ -226,10 +226,8 @@ def main():
     print("\nDone! Your mod is ready at:")
     print(f"  {destination}")
 
-    missing_dlls = [name for name in REQUIRED_DLLS if not (lib_dir / name).exists()]
-    if missing_dlls:
-        missing = " and ".join(missing_dlls)
-        print(f"WARNING! Missing DLLs. Copy {missing} into {lib_dir}")
+    missing = " and ".join(REQUIRED_DLLS)
+    print(f"WARNING! Missing DLLs. Copy {missing} into {lib_dir}")
 
     input("Press Enter to close...")
 
