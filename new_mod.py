@@ -90,6 +90,14 @@ def find_sts2_exe() -> Path | None:
     return None
 
 
+def escape_backslashes(replacements: dict) -> dict:
+    escaped = {}
+    for old_value, new_value in replacements.items():
+        escaped[old_value] = new_value.replace("\\", "\\\\")
+
+    return escaped
+
+
 def replace_in_file(path: Path, replacements: dict):
     extension = path.suffix.lower()
     if extension in BINARY_EXTENSIONS:
@@ -106,12 +114,18 @@ def replace_in_file(path: Path, replacements: dict):
 
 
 def apply_replacements(folder: Path, replacements: dict, old_name: str, new_name: str):
+    json_replacements = escape_backslashes(replacements)
+
     for root, dirs, files in os.walk(folder, topdown=False):
         root_path = Path(root)
 
         for file_name in files:
             file_path = root_path / file_name
-            replace_in_file(file_path, replacements)
+            if file_path.suffix.lower() == ".json":
+                replace_in_file(file_path, json_replacements)
+            else:
+                replace_in_file(file_path, replacements)
+
             if old_name in file_name:
                 new_file_name = file_name.replace(old_name, new_name)
                 file_path.rename(file_path.with_name(new_file_name))
