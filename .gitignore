@@ -4,3 +4,4 @@ dotnet pack in this folder
 bin/
 obj/
 /Folder.DotSettings.user
+__pycache__
