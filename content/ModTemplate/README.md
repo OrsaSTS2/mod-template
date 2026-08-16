@@ -1,3 +1,3 @@
-A template for an empty Slay the Spire 2 mod with BaseLib as a dependency.
+A template for an empty Slay the Spire 2 mod (no dependencies). Forked by Orsa.
 
-See the [wiki](https://github.com/Alchyr/ModTemplate-StS2/wiki) to get started.
+Original by Alchyr.

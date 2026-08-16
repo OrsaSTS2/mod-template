@@ -1,11 +1,11 @@
-Contains 3 templates.
+A template for an empty Slay the Spire 2 mod (no dependencies).
 
-Slay the Spire 2 Mod - Sets up an empty mod with BaseLib as a dependency. If you don't need it, remove it from the csproj and mod manifest json.
+This fork is for more experienced developers that might not want to rely on BaseLib. Use the original if you are a beginner.
 
-Slay the Spire 2 Content - Sets up a content mod.
+It also adds a feature to load godot addons with your mod.
 
-Slay the Spire 2 Character - Sets up a character mod.
+Two branches: `master` for the release branch of the game, `beta` for the beta branch.
 
-When creating a solution using these templates, make sure to enable "Put solution and project in same directory". This is required for it to work as-is with Godot.
+When creating a solution using this template, make sure to enable "Put solution and project in same directory".
 
-See [wiki](https://github.com/Alchyr/ModTemplate-StS2/wiki/Setup) for additional details.
+Original by the [Alchyr](https://github.com/Alchyr/ModTemplate-StS2).
