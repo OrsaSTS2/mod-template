@@ -48,49 +48,4 @@ public static class GdExtensionLoader
 
         _extensionLoaded = true;
     }
-    
-    // --- Fix Sentry shutdown crashing when loading a GDExtension ---
-    
-    [HarmonyPatch(typeof(SentryService), nameof(SentryService.Shutdown))]
-    public static class SentryNativeShutdownSuppressor
-    {
-        private static Node? _nativeSentryNode;
-
-        public static bool Prepare()
-        {
-            bool extensionLoaded = _extensionLoaded;
-
-            return extensionLoaded;
-        }
-
-        [HarmonyPrefix]
-        public static void Prefix()
-        {
-            _nativeSentryNode = SentryService._sentryInit;
-            SentryService._sentryInit = null;
-        }
-
-        [HarmonyPostfix]
-        public static void Postfix()
-        {
-            SentryService._sentryInit = _nativeSentryNode;
-        }
-    }
-
-    [HarmonyPatch(typeof(SentryService), "ShouldSampleEvent")]
-    public static class SentryEventSuppressor
-    {
-        public static bool Prepare()
-        {
-            bool extensionLoaded = _extensionLoaded;
-
-            return extensionLoaded;
-        }
-
-        [HarmonyPostfix]
-        public static void Postfix(ref bool __result)
-        {
-            __result = false;
-        }
-    }
 }
