@@ -6,20 +6,25 @@ Two branches: `master` for the release branch of the game, `beta` for the beta b
 
 ## Differences with the original
 
-Added:
+**Added:**
 - Loads godot addons with your mod
 - Rider launch configs for easy debugging
 
-Removed:
+**Removed:**
 - Only one template instead of 3
 - No dependency on BaseLib
 
+## Setup
+
+1. Clone this repository
+2. Run `install_megadot.py`
+
 ## How to use
 
-Using the python script (requires Python 3.10 or newer) (recommended):
+**Using the python script (requires Python 3.10 or newer) (recommended):**
 - Launch `new_mod.py`
 
-As a template:
+**As a template:**
 - Create a new solution using `content\ModTemplate` as a template
 - Manually edit the 'Launch STS2 (Debug)' run config in Rider with your game path
 

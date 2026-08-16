@@ -5,3 +5,4 @@ bin/
 obj/
 /Folder.DotSettings.user
 __pycache__
+.megadot

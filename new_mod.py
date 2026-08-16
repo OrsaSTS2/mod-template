@@ -171,7 +171,7 @@ def main():
             source_dir,
             destination,
             ignore=shutil.ignore_patterns(
-                ".git", ".godot", ".template.config", "README.md"
+                ".git", ".godot", ".template.config", "README.md", "*.py"
             ),
         )
 
