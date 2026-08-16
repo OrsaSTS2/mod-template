@@ -1,9 +1,9 @@
 {
-    "author": "Alchyr",
+    "author": "Orsa",
     "name": "Empty Slay the Spire 2 Mod",
-    "description": "An empty Slay the Spire 2 mod with BaseLib as a dependency.",
-    "identity": "Alchyr.Sts2Mod",
-    "shortName": "alchyrsts2mod",
+    "description": "An empty Slay the Spire 2 mod.",
+    "identity": "Orsa.Sts2Mod",
+    "shortName": "orsasts2mod",
     "tags": {
         "language": "C#",
         "type": "project"

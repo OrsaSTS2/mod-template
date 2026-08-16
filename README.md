@@ -8,4 +8,4 @@ Two branches: `master` for the release branch of the game, `beta` for the beta b
 
 When creating a solution using this template, make sure to enable "Put solution and project in same directory".
 
-Original by the [Alchyr](https://github.com/Alchyr/ModTemplate-StS2).
+Original by [Alchyr](https://github.com/Alchyr/ModTemplate-StS2).
