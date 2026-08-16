@@ -7,6 +7,7 @@ import tempfile
 from pathlib import Path
 
 REPO_URL = "git@github.com:OrsaSTS2/mod-template.git"
+REPO_BRANCH = "master"
 DEFAULT_TARGET_DIR = "./"
 REQUIRED_DLLS = ("sts2.dll", "0Harmony.dll")
 
@@ -171,7 +172,7 @@ def main():
     with tempfile.TemporaryDirectory() as temp_dir:
         clone_dir = Path(temp_dir) / "template"
         clone_result = subprocess.run(
-            ["git", "clone", "--depth=1", REPO_URL, str(clone_dir)],
+            ["git", "clone", "--depth=1", "--branch", REPO_BRANCH, REPO_URL, str(clone_dir)],
             capture_output=True,
             text=True,
         )
