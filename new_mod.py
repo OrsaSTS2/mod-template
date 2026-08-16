@@ -7,7 +7,7 @@ import tempfile
 from pathlib import Path
 
 REPO_URL = "git@github.com:OrsaSTS2/mod-template.git"
-REPO_BRANCH = "master"
+REPO_BRANCH = "beta"
 DEFAULT_TARGET_DIR = "./"
 REQUIRED_DLLS = ("sts2.dll", "0Harmony.dll")
 
