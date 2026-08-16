@@ -10,6 +10,7 @@
         <TargetFramework>net9.0</TargetFramework>
         <ImplicitUsings>true</ImplicitUsings>
         <Nullable>{NullableChecks}</Nullable> <!--Makes code analysis regarding null values stricter.-->
+        <Publicize>{PublicizeSts}</Publicize> <!--Allows access to originally private/protected members but may (unlikely to) cause errors.-->
         <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
         <EmbedAllSources>true</EmbedAllSources>
         <DebugType>embedded</DebugType>
@@ -32,14 +33,14 @@
             <Private>false</Private>
         </Reference>
     </ItemGroup>
-    
-    <ItemGroup Condition="{PublicizeSts}"> <!--Allows access to originally private/protected members but may (unlikely to) cause errors.-->
+
+    <ItemGroup Condition="$(Publicize)">
+        <PackageReference Include="Krafs.Publicizer" Version="2.3.0" PrivateAssets="All"/>
         <Publicize Include="sts2" IncludeVirtualMembers="false" IncludeCompilerGeneratedMembers="false" />
     </ItemGroup>
 
     <ItemGroup>
         <PackageReference Include="Alchyr.Sts2.BaseLib" Version="*" PrivateAssets="All"/>
-        <PackageReference Include="Krafs.Publicizer" Version="2.3.0" PrivateAssets="All"/>
         <PackageReference Include="Alchyr.Sts2.ModAnalyzers" Version="*" />
         <!-- Generates a .pck file when building if only using simple assets. May not work on all setups. Uncomment to test. -->
         <!-- <PackageReference Include="BSchneppe.StS2.PckPacker" Version="0.1.1" PrivateAssets="All" /> -->
